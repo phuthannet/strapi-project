@@ -33,6 +33,12 @@
       "type": "integer",
       "default": 0,
       "min": 0
+    },
+    "usersFav": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "historiesFav"
     }
   }
 }

@@ -66,14 +66,21 @@
       "configurable": false
     },
     "profile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "historiesFav": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::history.history",
+      "mappedBy": "usersFav"
     }
   }
 }

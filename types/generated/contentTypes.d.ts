@@ -385,6 +385,11 @@ export interface ApiHistoryHistory extends Schema.CollectionType {
         number
       > &
       Attribute.DefaultTo<0>;
+    usersFav: Attribute.Relation<
+      'api::history.history',
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -760,6 +765,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.role'
     >;
     profile: Attribute.Media;
+    historiesFav: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'manyToMany',
+      'api::history.history'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
