@@ -390,8 +390,12 @@ export interface ApiHistoryHistory extends Schema.CollectionType {
       'manyToMany',
       'plugin::users-permissions.user'
     >;
-    createBy: Attribute.String;
     model: Attribute.String;
+    createBy: Attribute.Relation<
+      'api::history.history',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

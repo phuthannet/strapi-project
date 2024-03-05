@@ -40,11 +40,13 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "historiesFav"
     },
-    "createBy": {
-      "type": "string"
-    },
     "model": {
       "type": "string"
+    },
+    "createBy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
     }
   }
 }
